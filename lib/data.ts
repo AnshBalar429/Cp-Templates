@@ -2,7 +2,22 @@
 
 import type { Snippet } from "./types"
 
-const snippets: Snippet[] = [
+export const categories = [
+  "All",
+  "Data Structure",
+  "Graph",
+  "Tree",
+  "Math",
+  "String",
+  "Segment Tree",
+  "Lazy Propagation",
+  "Trie",
+  "Min Tree",
+  "Online queries",
+  "Seq Tree",
+]
+
+export const codeSnippets: Snippet[] = [
   {
     id: "1",
     title: "Binary Lifting",
@@ -756,20 +771,20 @@ int main() {
 ]
 
 export function getSnippets() {
-  return snippets
+  return codeSnippets
 }
 
 export function getSnippetById(id: string) {
-  return snippets.find((snippet) => snippet.id === id)
+  return codeSnippets.find((snippet) => snippet.id === id)
 }
 
 export function getSnippetsByTag(tag: string) {
-  return snippets.filter((snippet) => snippet.tags.includes(tag))
+  return codeSnippets.filter((snippet) => snippet.tags.includes(tag))
 }
 
 export function searchSnippets(query: string) {
   const lowercaseQuery = query.toLowerCase()
-  return snippets.filter(
+  return codeSnippets.filter(
     (snippet) =>
       snippet.title.toLowerCase().includes(lowercaseQuery) ||
       snippet.description.toLowerCase().includes(lowercaseQuery) ||
